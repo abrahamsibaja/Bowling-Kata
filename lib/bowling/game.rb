@@ -5,7 +5,7 @@ module Bowling
       @score = 0
     end
 
-    def roll (pins)
+    def roll(pins)
       @score += pins
     end
 
