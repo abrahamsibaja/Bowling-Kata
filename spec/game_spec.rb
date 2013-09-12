@@ -43,5 +43,15 @@ module Bowling
       end
     end
 
+    describe "oneStrike" do
+      it "makes a strike" do
+        game.roll(10)
+        game.roll(3)
+        game.roll(4)
+        rollMany(16, 0)
+        game.score.should == 24
+      end
+    end
+
   end
 end
