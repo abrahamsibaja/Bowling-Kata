@@ -16,7 +16,10 @@ module Bowling
       @score = 0
       firstInFrame = 0
       frames.times do
-        if isSpare(firstInFrame)
+        if @rolls[firstInFrame] == 10 #strike
+          @score += 10 + @rolls[firstInFrame+1] + @rolls[firstInFrame+2]
+          firstInFrame += 1
+        elsif isSpare(firstInFrame)
           @score += 10 + @rolls[firstInFrame+2]
           firstInFrame += 2
         else 

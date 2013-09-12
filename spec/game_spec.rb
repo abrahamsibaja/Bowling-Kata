@@ -45,7 +45,7 @@ module Bowling
 
     describe "oneStrike" do
       it "makes a strike" do
-        game.roll(10)
+        game.roll(10) #strike
         game.roll(3)
         game.roll(4)
         rollMany(16, 0)
