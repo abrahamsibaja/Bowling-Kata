@@ -3,7 +3,6 @@ module Bowling
 
     def initialize
       @rolls = Array.new(21)
-      @frames = 10
       @currentRoll = 0
     end
 
@@ -13,8 +12,18 @@ module Bowling
     end
 
     def score
+      frames = 10
       @score = 0
-      @frames.times {|i| @score += @rolls[i*2] + @rolls[i*2 + 1]}
+      i = 0
+      frames.times do
+        if @rolls[i] + @rolls[i+1] == 10
+          @score += 10 + @rolls[i+2]
+          i += 2
+        else 
+          @score += @rolls[i] + @rolls[i+1]
+          i += 2
+        end
+      end
       return @score
     end
   end
