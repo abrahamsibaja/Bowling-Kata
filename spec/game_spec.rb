@@ -10,11 +10,18 @@ module Bowling
         game.roll(0)
       end
     end
+
     describe "gutterGame" do
-      it "does a gutterGame" do
-        20.times do game.roll(0)
-        end
-        0 == game.score
+      it "makes a gutterGame" do
+        20.times {game.roll(0)}
+        game.score.should == 0
+      end
+    end
+
+    describe "allOnesGame" do
+      it "makes an allOnesGame" do
+        20.times {game.roll(1)}
+        game.score.should == 20
       end
     end
   end
