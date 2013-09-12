@@ -10,5 +10,12 @@ module Bowling
         game.roll(0)
       end
     end
+    describe "gutterGame" do
+      it "does a gutterGame" do
+        20.times do game.roll(0)
+        end
+        0 == game.score
+      end
+    end
   end
 end
