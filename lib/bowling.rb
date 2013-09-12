@@ -1,1 +1,1 @@
-require 'bowling/game.rb'
+require 'bowling/game'
