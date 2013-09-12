@@ -9,6 +9,11 @@ module Bowling
       n.times {game.roll(pins)}
     end
 
+    def rollSpare
+      game.roll(5)
+      game.roll(5)
+    end
+
     describe "canRoll" do
       it "rolls" do
         game.roll(0)
@@ -31,8 +36,7 @@ module Bowling
 
     describe "oneSpare" do
       it "makes a spare" do
-        game.roll(5)
-        game.roll(5)
+        rollSpare
         game.roll(3)
         rollMany(17, 0)
         game.score.should == 16

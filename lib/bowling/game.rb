@@ -14,17 +14,21 @@ module Bowling
     def score
       frames = 10
       @score = 0
-      i = 0
+      firstInFrame = 0
       frames.times do
-        if @rolls[i] + @rolls[i+1] == 10
-          @score += 10 + @rolls[i+2]
-          i += 2
+        if isSpare(firstInFrame)
+          @score += 10 + @rolls[firstInFrame+2]
+          firstInFrame += 2
         else 
-          @score += @rolls[i] + @rolls[i+1]
-          i += 2
+          @score += @rolls[firstInFrame] + @rolls[firstInFrame+1]
+          firstInFrame += 2
         end
       end
       return @score
+    end
+
+    def isSpare(firstInFrame)
+      @rolls[firstInFrame] + @rolls[firstInFrame+1] == 10
     end
   end
 end
