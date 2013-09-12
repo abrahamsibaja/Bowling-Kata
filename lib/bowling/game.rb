@@ -3,6 +3,7 @@ module Bowling
 
     def initialize
       @rolls = Array.new(21)
+      @frames = 10
       @currentRoll = 0
     end
 
@@ -13,7 +14,7 @@ module Bowling
 
     def score
       @score = 0
-      @rolls.map {|i| @score += i.to_i}
+      @frames.times {|i| @score += @rolls[i*2] + @rolls[i*2 + 1]}
       return @score
     end
   end

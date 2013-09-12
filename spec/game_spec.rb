@@ -29,15 +29,15 @@ module Bowling
       end
     end
 
-    #describe "oneSpare" do
-     # it "makes a spare" do
-      #  game.roll(5)
-       # game.roll(5)
-        #game.roll(3)
-        #rollMany(17, 0)
-        #game.score.should == 16
-      #end
-    #end
+    describe "oneSpare" do
+      it "makes a spare" do
+        game.roll(5)
+        game.roll(5)
+        game.roll(3)
+        rollMany(17, 0)
+        game.score.should == 16
+      end
+    end
 
   end
 end
