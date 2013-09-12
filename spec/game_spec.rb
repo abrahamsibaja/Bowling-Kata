@@ -14,6 +14,11 @@ module Bowling
       game.roll(5)
     end
 
+    def rollStrike
+      game.roll(10)
+      game.roll(3)
+    end
+
     describe "canRoll" do
       it "rolls" do
         game.roll(0)
@@ -45,11 +50,17 @@ module Bowling
 
     describe "oneStrike" do
       it "makes a strike" do
-        game.roll(10) #strike
-        game.roll(3)
+        rollStrike
         game.roll(4)
         rollMany(16, 0)
         game.score.should == 24
+      end
+    end
+
+    describe "perfectGame" do
+      it "makes a perfect game" do
+        rollMany(12, 10)
+        game.score.should == 300
       end
     end
 
